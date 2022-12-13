@@ -1,0 +1,81 @@
+.container{
+  margin: 3%;
+}
+
+.dataContainer{
+  display: flex;
+}
+
+table{
+  border: 2px ;
+  background-color: var(--cor-bg-tabela);
+
+
+}
+th{
+
+  background-color: var(--cor-bg-header);
+  color: var(--cor-branca);
+  padding: 10px;
+  min-width: 50px;
+}
+.diaSemana{
+ margin: auto;
+ padding: 10px;
+ background-color: var(--cor-bg-tabela1);
+}
+.tableIns{
+  display: flex;
+  align-items: center;
+  background: none;
+}
+.tableIns1{
+  background: none;
+  margin-right: 5px;
+}
+.tableIns2{
+  background: none;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+td{
+  background:none;
+  padding: 0;
+  height: -5px;
+
+
+}
+tr{
+  border: 2px;
+  background:none;
+  font-weight: bold;
+  padding: 0;
+}
+
+.cor{
+  color: black;
+}
+.cor1{
+  background-color: rgb(0, 191, 255);
+}
+.cor2{
+  background-color: rgb(16, 5, 91);
+  color: var(--cor-branca);
+}
+.cor3{
+  background-color: rgb(255, 0, 0);
+  color: var(--cor-branca);
+}
+
+button{
+  padding: 5px;
+  font-weight: bold;
+}
+.atencao{
+  background-color: var(--cor-button2);
+  color: var(--cor-branca);
+}
+img{
+  width: 45px;
+  background: none;
+}

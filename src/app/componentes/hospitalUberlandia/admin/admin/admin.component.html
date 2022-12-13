@@ -1,0 +1,22 @@
+<div class="container">
+
+  <div class="logo">
+    <a href="http://localhost:4200/"><img src="../../../assets/img/Logo.png"></a>
+  </div>
+
+  <div class="admin">
+    Administrador
+  </div>
+
+  <div class="headerbutton">
+    <button (click)="dashboard()">Dashboard</button>
+    <button routerLink="listaDeMedicos">Médicos</button>
+    <button (click)="financeiro()">Financeiro</button>
+    <button routerLink="cadastrar">Cadastrar Usuário</button>
+    <button >Logout/Sair</button>
+  </div>
+</div>
+
+
+
+<router-outlet></router-outlet>

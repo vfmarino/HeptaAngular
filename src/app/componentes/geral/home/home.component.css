@@ -1,0 +1,15 @@
+.container{
+  margin: auto;
+  margin-top: 10%;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--cor-bg-header);
+  width: 30%;
+  flex-direction: column;
+  padding: 70px;
+  color: var(--cor-branca);
+  font-weight: bold;
+  font-size: 24px;
+}

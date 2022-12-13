@@ -1,0 +1,51 @@
+  <div class="container">
+
+  <div class="login">
+     <h3>Cadastra Novo Usuário</h3>
+  </div>
+  <form>
+    <div class="usuario">
+      <label>Nome:</label>
+      <input type="text" class="text" placeholder="Ex: João da Silva" name="name" [(ngModel)]="usuario.nome">
+    </div>
+
+    <div class="usuario">
+      <label>CPF:</label>
+      <input type="text" class="text" placeholder="Ex: 36895478920" name="cpf" [(ngModel)]="usuario.cpf">
+    </div>
+
+    <div class="usuario">
+      <label>Telefone:</label>
+      <input type="text" class="text" placeholder="Ex: +55 11 997825784" name="telefone" [(ngModel)]="usuario.telefone">
+    </div>
+
+    <div class="usuario">
+      <label>Especialidade:</label>
+      <input type="text" class="text" placeholder="Ex: Cardiologista" name="especialidade" [(ngModel)]="usuario.especialidade">
+    </div>
+
+    <div class="usuario">
+      <label>Email:</label>
+      <input type="email" class="inputemail" placeholder="Ex: name@example.com" name="email" [(ngModel)]="usuario.username">
+     </div>
+
+    <div class="usuario">
+      <label>Senha:</label>
+      <input type="password" class="inputpassword" name="userPassword" [(ngModel)]="usuario.password">
+    </div>
+
+    <div class="usuario">
+        <label for="profissoes">Selecionar Profissão:</label>
+          <select [(ngModel)]="usuario.role" class="selectFuncao" name="profissao" >
+              <option [ngValue]="undefined">-- Selecionar --</option>
+              <option  [ngValue]="medico">Médico</option>
+              <option  [ngValue]="admin">Admin</option>
+
+          </select>
+    </div>
+
+    <button type="button" class="bt1"(click)="cadastrar()">Registrar</button>
+    <button class="voltar" (click)="voltar()">Voltar</button>
+  </form>
+
+</div>

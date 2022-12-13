@@ -1,1 +1,19 @@
-/* You can add global styles to this file, and also import other style files */
+*{
+  margin: 0;
+  padding: 0;
+
+  --cor-preta: black;
+  --cor-branca: white;
+  --cor-fundo: black;
+  --cor-bg-tabela: rgb(158, 228, 250);
+  --cor-bg-tabela1: rgb(3, 150, 229);
+  --cor-bg-tabela2: rgb(1, 35, 100);
+  --cor-bg: rgb(210, 246, 255);
+  --cor-bg-header: rgb(0, 23, 69);
+  --cor-button1:rgb(0, 185, 214);
+  --cor-button2: rgb(131, 24, 24);
+  --cor-button3:rgb(2, 106, 33);
+  --cor-gradiente: rgb(0, 54, 140);
+  background-color: var(--cor-bg);
+
+}

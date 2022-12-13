@@ -1,0 +1,35 @@
+<div class="container">
+
+  <div class="tabela">
+    <table>
+
+      <tr>
+        <th>Id Do Usuário</th>
+        <th>Profissão</th>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>e-mail</th>
+        <th>Foto</th>
+        <th>Opções</th>
+      </tr>
+
+      <tr *ngFor = "let usuario of usuarios">
+        <td>{{usuario.id_user}}</td>
+        <td>{{usuario.role}}</td>
+        <td>{{usuario.nome}}</td>
+        <td>{{usuario.telefone}}</td>
+        <td>{{usuario.username}}</td>
+        <td> ADICIONAR FOTO</td>
+        <td>
+          <div class="opcoes">
+            <button  class="button1">Editar</button>
+            <button >Apagar</button>
+          </div>
+        </td>
+      </tr>
+
+    </table>
+
+  </div>
+
+</div>

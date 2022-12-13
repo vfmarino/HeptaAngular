@@ -1,0 +1,18 @@
+.container{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: var(--cor-bg-header);
+  height: 80px;
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+}
+.copy{
+
+  background-color: var(--cor-bg-header);
+  color: var(--cor-branca);
+  font-weight: bold;
+  margin-right: 5%;
+}

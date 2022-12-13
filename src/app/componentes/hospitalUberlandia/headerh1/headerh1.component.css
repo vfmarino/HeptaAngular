@@ -1,0 +1,38 @@
+.container{
+  background-color: var(--cor-bg-header);
+  height: 80px;
+  width: 100%;
+  align-items: center;
+  display: flex;
+
+
+}
+.logo{
+  background-color: var(--cor-bg-header);
+  margin-left: 30px;
+
+}
+.logo img{
+  width: 40%;
+  border-radius: 10px;
+  background-color: var(--cor-bg-header);
+}
+.headerbutton{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 12%;
+
+  background-color: var(--cor-bg-header);
+}
+button{
+  padding: 10px;
+  background-color: var(--cor-button1);
+  color: var(--cor-black);
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  margin-left: 25px;
+}
+a{
+  background: none;
+}
