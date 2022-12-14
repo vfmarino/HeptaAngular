@@ -41,18 +41,18 @@ const routes: Routes = [
                       children: [
                         {path: 'relatorios', component: RelatoriosComponent}]
                  },
-                 { path:'medicos', component: MedicosComponent,
+                 { path:'medico', component: MedicosComponent/*  ,
                     canActivate: [GuardService],
-                    children: [
-                     /*   {path: 'perfil', component: PerfilDoMedicoComponent},
+                     children: [
+                     {path: 'perfil', component: PerfilDoMedicoComponent},
                        {path: 'aceitarPlantao/:id/:manha', component: AceitarPlantaoComponent},
                        {path: 'aceitarPlantaoTarde/:id/:tarde', component: AceitarPlantaoTardeComponent},
                        {path: 'aceitarPlantaoNoite/:id/:noite', component: AceitarPlantaoNoiteComponent},
                        {path: 'problemas', component: AbaDeTrocaPlantoesComponent},
                        {path: 'pedirTrocaPlantaoManha/:id', component: PedirTrocaManhaComponent},
                        {path: 'pedirTrocaPlantaoTarde/:id', component: PedirTrocaTardeComponent},
-                       {path: 'pedirTrocaPlantaoNoite/:id', component: PedirTrocaNoiteComponent}, */
-                               ],
+                       {path: 'pedirTrocaPlantaoNoite/:id', component: PedirTrocaNoiteComponent},
+                               ], */
                   }
               ]
   },

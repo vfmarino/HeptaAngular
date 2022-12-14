@@ -30,6 +30,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
         this.getDashboradPlantoes();
+        console.log(localStorage.getItem("roles"));
 
   }
 
@@ -38,13 +39,13 @@ export class DashboardComponent implements OnInit {
   }
 
     public voltar(){
-      if(localStorage.getItem("role") == 'Admin' ){
+      if(localStorage.getItem("roles") === 'Admin' ){
         this.route.navigate(['escalaDePlantoes/admin/listaDeMedicos']);
       }
-      if(localStorage.getItem("role") == 'Médico' ){
+      if(localStorage.getItem("roles") === 'Médico' ){
         this.route.navigate(['escalaDePlantoes/medicos/perfil']);
       }
-      if(localStorage.getItem("role") == 'Financeiro' ){
+      if(localStorage.getItem("roles") === 'Financeiro' ){
       this.route.navigate(['escalaDePlantoes/financeiro/relatorios']);
       }
     }

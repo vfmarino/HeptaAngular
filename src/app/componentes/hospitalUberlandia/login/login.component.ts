@@ -33,8 +33,12 @@ export class LoginComponent implements OnInit {
        const role = response.user.role[0].roleName;
         if (role === 'Admin') {
           this.router.navigate(['/escalaDePlantoes/admin']);
+        } else if(role === 'Medico') {
+          this.router.navigate(['/escalaDePlantoes/medico']);
+        } else if( role === 'Financeiro'){
+          this.router.navigate(['/escalaDePlantoes/financeiro']);
         } else {
-          this.router.navigate(['/user']);
+          alert(" Operação não Encontrada, verificar ou entrar em contato com o Administrador")
         }
       },
       error: error => {

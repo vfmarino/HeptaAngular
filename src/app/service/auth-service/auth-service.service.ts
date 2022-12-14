@@ -23,6 +23,7 @@ export class AuthService {
     });
   }
 
+
   registrarUsuario(usuario:Usuarios):Observable<Usuarios>{
     return this.httpclient.post<Usuarios>(`${this.PATH_OF_API}`+'/registerNewUser', usuario);
   }

@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ListarDashBoardService {
 
-  private readonly API = environment.apiUrl+'/auth/listaDePlantoes';
+  private readonly API = environment.apiUrl+'/DadosDePlantoes/listaDePlantoes';
 
   constructor(private httpCliente: HttpClient) { }
 

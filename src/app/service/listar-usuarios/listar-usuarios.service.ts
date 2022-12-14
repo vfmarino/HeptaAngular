@@ -15,7 +15,7 @@ export class ListarUsuariosService {
   constructor(private httpCliente: HttpClient) { }
 
   getUsuarioList(): Observable<Usuarios[]>{
-    return this.httpCliente.get<Usuarios[]>(`${this.API}`+'/listar');
+    return this.httpCliente.get<Usuarios[]>(`${this.API}`+'/listUser');
 
   }
 

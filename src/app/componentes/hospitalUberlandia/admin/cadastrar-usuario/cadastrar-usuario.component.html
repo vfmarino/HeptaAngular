@@ -38,8 +38,9 @@
         <label for="profissoes">Selecionar Profissão:</label>
           <select [(ngModel)]="usuario.role" class="selectFuncao" name="profissao" >
               <option [ngValue]="undefined">-- Selecionar --</option>
-              <option  [ngValue]="medico">Médico</option>
+              <option  [ngValue]="medico">Medico</option>
               <option  [ngValue]="admin">Admin</option>
+              <option  [ngValue]="admin">Financeiro</option>
 
           </select>
     </div>

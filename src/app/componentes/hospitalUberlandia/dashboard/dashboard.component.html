@@ -26,9 +26,11 @@
       <tr>
         <td class="diaSemana">{{plantao.data |date : 'dd/MM/yyyy'}}</td>
         <td class="diaSemana">{{plantao.diaDaSemana}}</td> <!-- ADICIONAR PIPE PARA DATA VIRAR DIA DA SEMANA -->
-        <td [ngClass]="selecionarCor(cor)"> {{selecionarManha()}} </td> <!-- METODO PARA SELECIONAR ID_DO_MEDICO DATA PELA MANHA RETORNAR ID DO MEDICO, NOME, FOTO DO MEDICO E STATUS DO PLANTAO -->
-        <td [ngClass]="selecionarCor(cor)">{{selecionarTarde()}}</td>
-        <td [ngClass]="selecionarCor(cor)">{{selecionarNoite()}}</td>
+        <td class="diaSemana">{{plantao.diaDaSemana}}</td>
+        <td class="diaSemana">{{plantao.diaDaSemana}}</td>
+        <td class="diaSemana">{{plantao.diaDaSemana}}</td>
+
+
       </tr>
     </ng-container>
 
