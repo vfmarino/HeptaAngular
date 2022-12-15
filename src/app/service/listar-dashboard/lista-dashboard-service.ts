@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { DashBoardPlantoes } from 'src/app/modelos/dash-board/dash-board.module';
@@ -15,7 +15,11 @@ export class ListarDashBoardService {
   constructor(private httpCliente: HttpClient) { }
 
   getDashboardList(): Observable<DashBoardPlantoes[]>{
-    return this.httpCliente.get<DashBoardPlantoes[]>(`${this.API}`);
+    return this.httpCliente.get<DashBoardPlantoes[]>(`${this.API}`, {
+      headers: new HttpHeaders({
+        Authorization: "Bearer " + localStorage.getItem("jwtToken") || ''
+      })
+    });
 
   }
 
