@@ -15,7 +15,7 @@
 
       <tr *ngFor = "let usuario of usuarios">
         <td>{{usuario.id_user}}</td>
-        <td>{{usuario.role}}</td>
+        <td>{{usuario.role?.[0]?.roleName}}</td>
         <td>{{usuario.nome}}</td>
         <td>{{usuario.telefone}}</td>
         <td>{{usuario.username}}</td>

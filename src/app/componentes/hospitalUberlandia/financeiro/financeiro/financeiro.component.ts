@@ -19,14 +19,15 @@ export class FinanceiroComponent implements OnInit {
   }
 
   dashboard(){
-    this.route.navigate(['../../dashboard'])
+
+    this.route.navigate(['escalaDePlantoes/dashboard']);
   }
 
   logout(){
-    this.userAuthService.setRoles([]);
-    this.userAuthService.setToken("");
-    this.route.navigate(['escalaDePlantoes/login']);
-}
+      this.userAuthService.setRoles([]);
+      this.userAuthService.setToken("");
+      this.route.navigate(['escalaDePlantoes/login']);
+  }
 
 
 }

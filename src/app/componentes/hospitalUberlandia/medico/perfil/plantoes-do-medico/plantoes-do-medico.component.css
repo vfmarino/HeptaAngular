@@ -1,11 +1,27 @@
 .container{
-  margin: 1%;
+  margin: 2%;
+  align-items: center;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--cor-bg-header);
+  width: 150% ;
+  padding: 10px;
+  color: var(--cor-branca);
+  font-weight: bold;
+  font-size: 16px;
 }
 
-.dataContainer{
-  display: flex;
-}
+button{
+  background-color: var(--cor-button1);
+  padding: 10px;
 
+  border: none;
+  border-radius: 15px;
+  width: 180px;
+  font-weight: bold;
+  font-size: 12px;
+
+}
 table{
   border: 2px ;
   background-color: var(--cor-bg-tabela);
@@ -74,61 +90,3 @@ tr{
   background-color: rgb(7, 71, 34);
   color: var(--cor-branca);
 }
-
-button{
-  padding: 5px;
-  font-weight: bold;
-}
-.atencao{
-  background-color: var(--cor-button2);
-  color: var(--cor-branca);
-}
-img{
-  width: 45px;
-  background: none;
-}
-.voltar button{
-  background-color: var(--cor-bg-header);
-  color: var(--cor-branca);
-  padding: 10px;
-  margin: auto;
-  margin-top: 2%;
-  margin-bottom: 2%;
-  border: none;
-  border-radius: 15px;
-  width: 150px;
-  font-weight: bold;
-  font-size: 16px;
-
-}
-.header{
-  background-color: var(--cor-bg-header);
-  height: 80px;
-  width: 100%;
-  align-items: center;
-  display: flex;
-
-}
-.logo{
-  background-color: var(--cor-bg-header);
-  margin-top: 8px;
-  margin-left: 30px;
-
-}
-.logo img{
-  width: 22%;
-  border-radius: 10px;
-  background-color: var(--cor-bg-header);
-}
-.admin{
-  color: var(--cor-branca);
-  font-size: 25px;
-  font-weight: bold;
-  background: none;
-  margin-left: -10%;
-  margin-right: 20%;
-}
-a{
-  background: none;
-}
-

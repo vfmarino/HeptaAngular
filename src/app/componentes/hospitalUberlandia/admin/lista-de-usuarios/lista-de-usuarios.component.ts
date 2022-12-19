@@ -20,6 +20,7 @@ export class ListaDeUsuariosComponent implements OnInit {
 
       ngOnInit(): void {
        this.listarUsuarios();
+
       }
 
       listarUsuarios(){

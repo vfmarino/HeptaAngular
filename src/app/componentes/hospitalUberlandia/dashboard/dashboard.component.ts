@@ -39,13 +39,13 @@ export class DashboardComponent implements OnInit {
   }
 
     public voltar(){
-      if(localStorage.getItem("roles") === 'Admin' ){
+      if(localStorage.getItem("roleName") === 'Admin' ){
         this.route.navigate(['escalaDePlantoes/admin/listaDeMedicos']);
       }
-      if(localStorage.getItem("roles") === 'Médico' ){
-        this.route.navigate(['escalaDePlantoes/medicos/perfil']);
+      if(localStorage.getItem("roleName") === 'Medico' ){
+        this.route.navigate(['escalaDePlantoes/medico']);
       }
-      if(localStorage.getItem("roles") === 'Financeiro' ){
+      if(localStorage.getItem("roleName") === 'Financeiro' ){
       this.route.navigate(['escalaDePlantoes/financeiro/relatorios']);
       }
     }

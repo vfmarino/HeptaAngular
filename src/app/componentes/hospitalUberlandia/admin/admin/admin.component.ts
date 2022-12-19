@@ -18,9 +18,7 @@ export class AdminComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  financeiro(){
-    this.route.navigate(['escalaDePlantoes/financeiro']);
-  }
+
   dashboard(){
 
     this.route.navigate(['escalaDePlantoes/dashboard']);

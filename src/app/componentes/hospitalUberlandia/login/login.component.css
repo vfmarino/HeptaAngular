@@ -7,11 +7,12 @@
 }
 .logo{
   background-color: var(--cor-bg-header);
+  margin-top: 8px;
   margin-left: 30px;
 
 }
 .logo img{
-  width: 40%;
+  width: 22%;
   border-radius: 10px;
   background-color: var(--cor-bg-header);
 }
@@ -71,4 +72,7 @@ select{
 .voltar{
   background-color: var(--cor-button2);
   margin-left: 10px;
+}
+a{
+  background: none;
 }

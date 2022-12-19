@@ -11,7 +11,7 @@ export class Usuarios {
   cpf!: string;
   telefone!: string;
   especialidade!: string;
-  role!: Role;
+  role?: Role[];
   conta_bancariaid!: number;
   hospitaisid!: number;
 

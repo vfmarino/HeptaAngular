@@ -16,11 +16,16 @@ import { FinanceiroComponent } from './componentes/hospitalUberlandia/financeiro
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './componentes/hospitalUberlandia/login/login.component';
-import { MedicosComponent } from './componentes/hospitalUberlandia/medicos/medicos/medicos.component';
 import { HospitalUberlandiaComponent } from './componentes/hospitalUberlandia/hospital-uberlandia/hospital-uberlandia.component';
 import { EscalaDePlantoesComponent } from './componentes/hospitalUberlandia/escala-de-plantoes/escala-de-plantoes.component';
 import { CommonModule, DatePipe } from '@angular/common';
 import { RelatoriosComponent } from './componentes/hospitalUberlandia/financeiro/relatorios/relatorios.component';
+import { MedicoComponent } from './componentes/hospitalUberlandia/medico/medico/medico.component';
+import { PerfilComponent } from './componentes/hospitalUberlandia/medico/perfil/perfil.component';
+import { DadosDoMedicoComponent } from './componentes/hospitalUberlandia/medico/perfil/dados-do-medico/dados-do-medico.component';
+import { PlantoesDoMedicoComponent } from './componentes/hospitalUberlandia/medico/perfil/plantoes-do-medico/plantoes-do-medico.component';
+import { TrocaDePlantoesComponent } from './componentes/hospitalUberlandia/medico/troca-de-plantoes/troca-de-plantoes.component';
+
 
 
 @NgModule({
@@ -37,10 +42,15 @@ import { RelatoriosComponent } from './componentes/hospitalUberlandia/financeiro
     DashboardComponent,
     FinanceiroComponent,
     LoginComponent,
-    MedicosComponent,
     HospitalUberlandiaComponent,
     EscalaDePlantoesComponent,
-    RelatoriosComponent
+    RelatoriosComponent,
+    MedicoComponent,
+    PerfilComponent,
+    DadosDoMedicoComponent,
+    PlantoesDoMedicoComponent,
+    TrocaDePlantoesComponent
+
   ],
   imports: [
     BrowserModule,

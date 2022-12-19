@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Role } from 'src/app/modelos/Role/Role.module';
@@ -15,7 +15,11 @@ export class ListarUsuariosService {
   constructor(private httpCliente: HttpClient) { }
 
   getUsuarioList(): Observable<Usuarios[]>{
-    return this.httpCliente.get<Usuarios[]>(`${this.API}`+'/listUser');
+    return this.httpCliente.get<Usuarios[]>(`${this.API}`+'/listUser',  {
+      headers: new HttpHeaders({
+        Authorization: "Bearer " + localStorage.getItem("jwtToken") || ''
+      })
+    });
 
   }
 

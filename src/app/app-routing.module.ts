@@ -11,10 +11,13 @@ import { FinanceiroComponent } from './componentes/hospitalUberlandia/financeiro
 import { RelatoriosComponent } from './componentes/hospitalUberlandia/financeiro/relatorios/relatorios.component';
 import { HospitalUberlandiaComponent } from './componentes/hospitalUberlandia/hospital-uberlandia/hospital-uberlandia.component';
 import { LoginComponent } from './componentes/hospitalUberlandia/login/login.component';
-import { MedicosComponent } from './componentes/hospitalUberlandia/medicos/medicos/medicos.component';
+import { MedicoComponent } from './componentes/hospitalUberlandia/medico/medico/medico.component';
+import { PerfilComponent } from './componentes/hospitalUberlandia/medico/perfil/perfil.component';
+
 
 import { AdminguardService } from './service/admin-guard/admin-guard.service';
 import { GuardService } from './service/guard/guard.service';
+import { TrocaDePlantoesComponent } from './componentes/hospitalUberlandia/medico/troca-de-plantoes/troca-de-plantoes.component';
 
 const routes: Routes = [
 
@@ -41,23 +44,19 @@ const routes: Routes = [
                       children: [
                         {path: 'relatorios', component: RelatoriosComponent}]
                  },
-                 { path:'medico', component: MedicosComponent/*  ,
-                    canActivate: [GuardService],
+                 { path:'medico', component: MedicoComponent,
+                //    canActivate: [GuardService],
                      children: [
-                     {path: 'perfil', component: PerfilDoMedicoComponent},
-                       {path: 'aceitarPlantao/:id/:manha', component: AceitarPlantaoComponent},
-                       {path: 'aceitarPlantaoTarde/:id/:tarde', component: AceitarPlantaoTardeComponent},
-                       {path: 'aceitarPlantaoNoite/:id/:noite', component: AceitarPlantaoNoiteComponent},
-                       {path: 'problemas', component: AbaDeTrocaPlantoesComponent},
-                       {path: 'pedirTrocaPlantaoManha/:id', component: PedirTrocaManhaComponent},
-                       {path: 'pedirTrocaPlantaoTarde/:id', component: PedirTrocaTardeComponent},
-                       {path: 'pedirTrocaPlantaoNoite/:id', component: PedirTrocaNoiteComponent},
-                               ], */
+                     {path: 'perfil', component: PerfilComponent},
+                     {path: 'trocas', component: TrocaDePlantoesComponent},
+
+
+                               ],
                   }
               ]
   },
 
-  // APARTIR DAQUI TERMINA AS ROTAS DO HOSPITAL DE URBERLANDIA
+
 
 
 ];

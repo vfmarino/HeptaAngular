@@ -1,30 +1,4 @@
-<div class="header">
-  <div class="logo">
-    <a href="http://localhost:4200/"><img src="../../../assets/img/Logo.png"></a>
-  </div>
-
-  <div class="admin">
-    PLANTOES
-  </div>
-</div>
-
-
 <div class="container">
-
-  <div class="voltar">
-      <button (click)="voltar()">Voltar</button>
-  </div>
-
-  <div class="dataContainer">
-      <div>
-      <h3>Selecionar as Datas Desejadas</h3>
-          <label>Data Inicial</label>
-          <input type="date" placeholder="Data Inicial" name="dataInicial" [(ngModel)]="dataInicial">
-          <label>Data Final</label>
-          <input type="date" placeholder="Data Final" name="dataFinal" [(ngModel)]="dataFinal">
-    </div>
-  </div>
-
   <table>
     <tr>
       <th>DATA</th>
@@ -35,7 +9,7 @@
       <th>STATUS</th>
 
     </tr>
-    <ng-container *ngFor = "let plantao of plantoes ">
+    <ng-container *ngFor = "let plantao of dashBoardPlantoes ">
       <tr>
         <td class="diaSemana">{{plantao.data |date : 'dd/MM/yyyy'}}</td>
         <td class="diaSemana">{{plantao.diaDaSemana}}</td> <!-- ADICIONAR PIPE PARA DATA VIRAR DIA DA SEMANA -->
@@ -57,7 +31,4 @@
 
   </table>
 
-
-
 </div>
-

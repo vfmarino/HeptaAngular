@@ -4,6 +4,7 @@ import { Usuarios } from 'src/app/modelos/usuario-modelo/usuario-modelo.module';
 
 import { ListarUsuariosService } from '../../../../service/listar-usuarios/listar-usuarios.service';
 import { Role } from 'src/app/modelos/Role/Role.module';
+import { ContaBancaria } from '../../../../modelos/conta-bancaria/conta-bancaria.module';
 
 @Component({
   selector: 'app-cadastrar-usuario',
@@ -14,8 +15,9 @@ export class CadastrarUsuarioComponent implements OnInit {
 
 profi :Role[]=[];
 usuario : Usuarios = new Usuarios();
-admin : string = "Admin";
-medico : string ="Médico";
+conta: ContaBancaria = new ContaBancaria();
+admin : number = 1;
+medico : number = 2;
 
 
 
@@ -28,12 +30,17 @@ constructor(
 {}
 
 ngOnInit(): void {
-  this.usuario.conta_bancariaid=1;
-  this.usuario.hospitaisid=1;
+
 }
 
 cadastrar(){
     console.log(this.usuario);
+    this.usuario.conta_bancariaid=12;
+    this.usuario.hospitaisid=1;
+    this.conta.cpf = this.usuario.cpf;
+
+    console.log(this.usuario);
+    console.log(this.conta);
 
     this.listarUsuarioService.registrarUsuario(this.usuario).subscribe(
 

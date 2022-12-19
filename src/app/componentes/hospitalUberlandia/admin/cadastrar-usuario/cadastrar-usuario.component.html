@@ -1,9 +1,12 @@
   <div class="container">
 
-  <div class="login">
-     <h3>Cadastra Novo Usuário</h3>
+  <div class="titulo">
+     <h3>Cadastrar Novo Usuário</h3>
   </div>
-  <form>
+
+  <form class="form1">
+    <div class="login">
+      <h2>Dados Pessoais</h2>
     <div class="usuario">
       <label>Nome:</label>
       <input type="text" class="text" placeholder="Ex: João da Silva" name="name" [(ngModel)]="usuario.nome">
@@ -44,9 +47,38 @@
 
           </select>
     </div>
+  </div>
 
-    <button type="button" class="bt1"(click)="cadastrar()">Registrar</button>
-    <button class="voltar" (click)="voltar()">Voltar</button>
+  <div class="dadosbancarios">
+
+   <h2> Dados Bancarios:</h2>
+
+    <div class="usuario">
+      <label>Banco:</label>
+      <input type="password" class="inputpassword" name="userPassword" [(ngModel)]="conta.banco">
+    </div>
+    <div class="usuario">
+      <label>Agencia:</label>
+      <input type="password" class="inputpassword" name="userPassword" [(ngModel)]="conta.agencia">
+    </div>
+    <div class="usuario">
+      <label>Conta:</label>
+      <input type="password" class="inputpassword" name="userPassword" [(ngModel)]="conta.conta">
+    </div>
+    <div class="usuario">
+      <label>Tipo:</label>
+      <input type="password" class="inputpassword" name="userPassword" [(ngModel)]="conta.tipo">
+    </div>
+
+  </div>
+
+
   </form>
+<div class="botao">
+
+   <button type="button" class="bt1"(click)="cadastrar()">Registrar</button>
+   <button class="voltar" (click)="voltar()">Voltar</button>
+
+</div>
 
 </div>

@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
 
   userROle:String[] =[];
 
+  id!:number;
 
   constructor(
     private AuthService: AuthService,
@@ -29,12 +30,15 @@ export class LoginComponent implements OnInit {
        next : (response: any) => {
         this.userAuthService.setRoles(response.user.role);
         this.userAuthService.setToken(response.jwtToken);
+        localStorage.setItem("userId", response.user.id_user);
 
+        localStorage.setItem("roleName", response.user.role[0].roleName);
        const role = response.user.role[0].roleName;
+
         if (role === 'Admin') {
           this.router.navigate(['/escalaDePlantoes/admin']);
         } else if(role === 'Medico') {
-          this.router.navigate(['/escalaDePlantoes/medico']);
+          this.router.navigate(['/escalaDePlantoes/medico/perfil']);
         } else if( role === 'Financeiro'){
           this.router.navigate(['/escalaDePlantoes/financeiro']);
         } else {
