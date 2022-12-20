@@ -42,11 +42,27 @@ export class AuthService {
     }) });
   }
 
-  getDadosDePlantoes(userID: number) {
-    const userId = localStorage.getItem('userId');
-    const token = `Bearer ${localStorage.getItem('jwtToken') || ''}`;
-    const url = `${this.PATH_OF_API}/DadosDePlantoes/dadosDePlantoes/${userId}?token=${token}`;
-    return this.httpclient.get<DashBoardPlantoes[]>(url, { params: { userID } });
+  getDadosDePlantoes(userId :number) : Observable<DashBoardPlantoes[]>{
+
+    return this.httpclient.get<DashBoardPlantoes[]>(
+      `${this.PATH_OF_API}/DadosDePlantoes/dadosDePlantoes/${userId}?=`+`Bearer ${localStorage.getItem('jwtToken') || ''}&userID=${userId}`,
+      {
+        headers: new HttpHeaders({
+          Authorization: `Bearer ${localStorage.getItem('jwtToken') || ''}`,
+        }),
+      }
+    );
+
+  }
+
+  updateDadosDePlantoesById(id: number, plantoes: DashBoardPlantoes): Observable<Object>{
+    return this.httpclient.put(`${this.PATH_OF_API}/DadosDePlantoes/dadosDePlantoes/${id}`, plantoes,
+    {
+      headers: new HttpHeaders({
+        Authorization: `Bearer ${localStorage.getItem('jwtToken') || ''}`,
+      }),
+    }
+    );
   }
 
   registrarUsuario(usuario:Usuarios):Observable<Usuarios>{

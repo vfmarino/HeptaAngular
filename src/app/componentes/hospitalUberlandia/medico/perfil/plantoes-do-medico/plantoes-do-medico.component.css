@@ -4,11 +4,11 @@
   border: none;
   border-radius: 10px;
   background-color: var(--cor-bg-header);
-  width: 150% ;
+  width: 100% ;
   padding: 10px;
   color: var(--cor-branca);
   font-weight: bold;
-  font-size: 16px;
+  font-size: 12px;
 }
 
 button{

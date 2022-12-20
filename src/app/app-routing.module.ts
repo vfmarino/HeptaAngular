@@ -48,7 +48,7 @@ const routes: Routes = [
                 //    canActivate: [GuardService],
                      children: [
                      {path: 'perfil', component: PerfilComponent},
-                     {path: 'trocas', component: TrocaDePlantoesComponent},
+                     {path: 'trocas/:id', component: TrocaDePlantoesComponent},
 
 
                                ],

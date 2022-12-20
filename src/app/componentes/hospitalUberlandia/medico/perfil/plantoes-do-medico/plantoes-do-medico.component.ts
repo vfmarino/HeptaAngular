@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { DashBoardPlantoes } from 'src/app/modelos/dash-board/dash-board.module';
 import { AuthService } from 'src/app/service/auth-service/auth-service.service';
 
@@ -11,11 +12,14 @@ export class PlantoesDoMedicoComponent implements OnInit {
 
   dashBoardPlantoes : DashBoardPlantoes[]=[];
   usuario: any;
-  userID:any;
-
+  userID:number =-1;
+  userId:number =-1;
   constructor(
-   private authService: AuthService
-  ) { }
+
+   private authService: AuthService,
+   private route: Router
+
+   ) { }
 
     ngOnInit(): void {
       this.getUser();
@@ -23,20 +27,24 @@ export class PlantoesDoMedicoComponent implements OnInit {
 
     }
 
-    getPlantoesById(){
-      this.authService.getDadosDePlantoes(this.userID).subscribe(plantoes => {
+    getPlantoesByIdUser(userId: number){
+        this.authService.getDadosDePlantoes(userId).subscribe(plantoes => {
         this.dashBoardPlantoes = plantoes;
-        console.log(this.dashBoardPlantoes);
+
       });
         }
 
     getUser(){
       this.authService.getUser().subscribe(user => {
         this.usuario = user;
-        this.userID = this.usuario.id_user;
-        this.getPlantoesById();
+        this.userId = this.usuario.id_user;
+        this.getPlantoesByIdUser(this.userId);
       });
 
+    }
+
+    trocar(id:number){
+      this.route.navigate(['escalaDePlantoes/medico/trocas', id]);
     }
 
 }

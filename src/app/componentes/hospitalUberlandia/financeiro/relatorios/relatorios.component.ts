@@ -34,9 +34,9 @@ export class RelatoriosComponent implements OnInit {
   }
 
   calcular() {
-    this.financeiroService.buscarPlantoesPorUsuario(this.startDate: Date, this.endDate: Date).subscribe(result => {
+    /*this.financeiroService.buscarPlantoesPorUsuario(this.startDate: Date, this.endDate: Date).subscribe(result => {
       console.log(result);
-    });
+    });*/
   }
 
 
