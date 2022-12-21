@@ -19,7 +19,7 @@ export class MedicoComponent implements OnInit {
   }
 
   trocas(){
-    this.route.navigate(['escalaDePlantoes/medico/trocas']);
+    this.route.navigate(['escalaDePlantoes/medico/troca']);
   }
 
   dashboard(){

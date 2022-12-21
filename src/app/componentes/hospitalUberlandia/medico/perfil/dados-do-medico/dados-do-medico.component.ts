@@ -11,9 +11,13 @@ export class DadosDoMedicoComponent implements OnInit {
 
 usuario: any;
 
+
 constructor(
     private authService: AuthService
-  ) { }
+  ) {
+   this.usuario={}
+
+  }
 
   ngOnInit(): void {
     this.getUser();

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DashBoardPlantoes } from 'src/app/modelos/dash-board/dash-board.module';
 import { AuthService } from 'src/app/service/auth-service/auth-service.service';
+import { TrocaDePlantaoService } from 'src/app/service/trocaDePlantao/troca-de-plantao.service';
 
 @Component({
   selector: 'app-troca-de-plantoes',
@@ -10,47 +11,54 @@ import { AuthService } from 'src/app/service/auth-service/auth-service.service';
 })
 export class TrocaDePlantoesComponent implements OnInit {
 
-  id:number =0;
-  userId:number =-1;
-  plantao : DashBoardPlantoes=new DashBoardPlantoes();
-  usuario: any;
+  id!:number ;
+
+  dashBoardPlantoes: any;
+
 
   constructor(
     private router: ActivatedRoute,
-    private authService: AuthService,
+    private trocaDePlantaoService: TrocaDePlantaoService,
     private route: Router
   ) { }
 
   ngOnInit(): void {
-    //this.getUser();
-    this.id = this.router.snapshot.params['id'];
+     this.id = this.router.snapshot.params['id'];
 
   }
-  getDadosDePlantoesById(){
-    this.authService.updateDadosDePlantoesById(this.id, this.plantao).subscribe(  {
-      next: data =>{
-      this.goToPerfil();
-      },
-      error: error => {
-        console.log(error);
-      }
-    }
-  )}
-
-  getUser(){
-    this.authService.getUser().subscribe(user => {
-      this.usuario = user;
-      this.userId = this.usuario.id_user;
-
-
-    });
-
-}
 
   aceitar(){
-   this.getUser();
-   this.getDadosDePlantoesById();
+    this.getPlantaoById(this.id);
+    this.updatePlantaoById();
   }
+
+  getPlantaoById(id: number){
+    this.trocaDePlantaoService.getPlantaoById(id).subscribe(plantao => {
+      console.log(plantao);
+
+      this.dashBoardPlantoes = plantao;
+      console.log(this.dashBoardPlantoes);
+    });
+  }
+
+  updatePlantaoById(){
+    this.trocaDePlantaoService.updatePlantaoByID(this.id, this.dashBoardPlantoes).subscribe(
+      {
+        next: data =>{
+        this.goToPerfil();
+        },
+        error: error => {
+          console.log(error);
+        }
+      }
+    )
+  }
+
+
+
+
+
+
 
   cancelar(){
     this.route.navigate(['/escalaDePlantoes/medico/perfil']);

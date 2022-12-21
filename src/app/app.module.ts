@@ -25,6 +25,8 @@ import { PerfilComponent } from './componentes/hospitalUberlandia/medico/perfil/
 import { DadosDoMedicoComponent } from './componentes/hospitalUberlandia/medico/perfil/dados-do-medico/dados-do-medico.component';
 import { PlantoesDoMedicoComponent } from './componentes/hospitalUberlandia/medico/perfil/plantoes-do-medico/plantoes-do-medico.component';
 import { TrocaDePlantoesComponent } from './componentes/hospitalUberlandia/medico/troca-de-plantoes/troca-de-plantoes.component';
+import { AceitarPlantaoComponent } from './componentes/hospitalUberlandia/medico/aceitar-plantao/aceitar-plantao.component';
+import { PlantoesParaTrocaComponent } from './componentes/hospitalUberlandia/medico/plantoes-para-troca/plantoes-para-troca.component';
 
 
 
@@ -49,7 +51,9 @@ import { TrocaDePlantoesComponent } from './componentes/hospitalUberlandia/medic
     PerfilComponent,
     DadosDoMedicoComponent,
     PlantoesDoMedicoComponent,
-    TrocaDePlantoesComponent
+    TrocaDePlantoesComponent,
+    AceitarPlantaoComponent,
+    PlantoesParaTrocaComponent
 
   ],
   imports: [

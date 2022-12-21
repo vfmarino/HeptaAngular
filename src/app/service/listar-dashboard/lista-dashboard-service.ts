@@ -10,7 +10,7 @@ import { environment } from 'src/environments/environment';
 })
 export class ListarDashBoardService {
 
-  private readonly API = environment.apiUrl+'/DadosDePlantoes/listaDePlantoes';
+  private readonly API = environment.apiUrl+'/listaDePlantoes';
 
   constructor(private httpCliente: HttpClient) { }
 
@@ -23,10 +23,5 @@ export class ListarDashBoardService {
 
   }
 
-  getMedicoById(id: number): Observable<Object>{
-    return this.httpCliente.get<DashBoardPlantoes[]>(`${this.API}/${id}`);
-  }
-  updateMedico(id: number, clientes: DashBoardPlantoes): Observable<Object>{
-    return this.httpCliente.put(`${this.API}/${id}`, clientes);
-  }
+
 }

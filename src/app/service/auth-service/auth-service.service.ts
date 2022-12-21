@@ -20,7 +20,7 @@ export class AuthService {
 
 
   constructor(
-    private httpclient: HttpClient,
+    private httpclient: HttpClient
 
   ) {}
 
@@ -45,7 +45,7 @@ export class AuthService {
   getDadosDePlantoes(userId :number) : Observable<DashBoardPlantoes[]>{
 
     return this.httpclient.get<DashBoardPlantoes[]>(
-      `${this.PATH_OF_API}/DadosDePlantoes/dadosDePlantoes/${userId}?=`+`Bearer ${localStorage.getItem('jwtToken') || ''}&userID=${userId}`,
+      `${this.PATH_OF_API}/dadosDePlantoesByUserID/${userId}?=`+`Bearer ${localStorage.getItem('jwtToken') || ''}&userID=${userId}`,
       {
         headers: new HttpHeaders({
           Authorization: `Bearer ${localStorage.getItem('jwtToken') || ''}`,
@@ -54,20 +54,5 @@ export class AuthService {
     );
 
   }
-
-  updateDadosDePlantoesById(id: number, plantoes: DashBoardPlantoes): Observable<Object>{
-    return this.httpclient.put(`${this.PATH_OF_API}/DadosDePlantoes/dadosDePlantoes/${id}`, plantoes,
-    {
-      headers: new HttpHeaders({
-        Authorization: `Bearer ${localStorage.getItem('jwtToken') || ''}`,
-      }),
-    }
-    );
-  }
-
-  registrarUsuario(usuario:Usuarios):Observable<Usuarios>{
-    return this.httpclient.post<Usuarios>(`${this.PATH_OF_API}`+'/registerNewUser', usuario);
-  }
-
 
 }

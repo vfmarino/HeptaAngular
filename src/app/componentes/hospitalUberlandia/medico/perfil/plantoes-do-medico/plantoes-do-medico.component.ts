@@ -29,9 +29,9 @@ export class PlantoesDoMedicoComponent implements OnInit {
 
     getPlantoesByIdUser(userId: number){
         this.authService.getDadosDePlantoes(userId).subscribe(plantoes => {
-        this.dashBoardPlantoes = plantoes;
+          this.dashBoardPlantoes = plantoes;
 
-      });
+        });
         }
 
     getUser(){

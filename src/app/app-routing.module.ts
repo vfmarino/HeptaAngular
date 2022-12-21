@@ -18,6 +18,8 @@ import { PerfilComponent } from './componentes/hospitalUberlandia/medico/perfil/
 import { AdminguardService } from './service/admin-guard/admin-guard.service';
 import { GuardService } from './service/guard/guard.service';
 import { TrocaDePlantoesComponent } from './componentes/hospitalUberlandia/medico/troca-de-plantoes/troca-de-plantoes.component';
+import { AceitarPlantaoComponent } from './componentes/hospitalUberlandia/medico/aceitar-plantao/aceitar-plantao.component';
+import { PlantoesParaTrocaComponent } from './componentes/hospitalUberlandia/medico/plantoes-para-troca/plantoes-para-troca.component';
 
 const routes: Routes = [
 
@@ -49,6 +51,7 @@ const routes: Routes = [
                      children: [
                      {path: 'perfil', component: PerfilComponent},
                      {path: 'trocas/:id', component: TrocaDePlantoesComponent},
+                     {path: 'troca', component: PlantoesParaTrocaComponent},
 
 
                                ],

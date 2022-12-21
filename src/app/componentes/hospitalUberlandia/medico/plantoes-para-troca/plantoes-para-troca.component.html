@@ -1,0 +1,38 @@
+<div class="container">
+  <table>
+    <tr>
+      <th>NR DO PLANTÃO</th>
+      <th>DATA</th>
+      <th>DIA DA SEMANA</th>
+      <th>PERÍODO</th>
+      <th>MÉDICO </th>
+      <th>SETOR</th>
+      <th>STATUS</th>
+      <th>TROCA</th>
+
+    </tr>
+    <ng-container *ngFor = "let plantao of dashBoardPlantoes ">
+      <tr>
+        <td class="diaSemana">{{plantao.id_PlantaoMedico}}</td>
+        <td class="diaSemana">{{plantao.data |date : 'dd/MM/yyyy'}}</td>
+        <td class="diaSemana">{{plantao.diaDaSemana}}</td> <!-- ADICIONAR PIPE PARA DATA VIRAR DIA DA SEMANA -->
+        <td class="diaSemana">{{plantao.periodoID.periodo}}</td>
+        <td class="diaSemana">{{plantao.userID.nome}}</td>
+        <td class="diaSemana">{{plantao.setoresID.setores}}</td>
+        <td [ngClass]="{
+          'cor1': plantao.statusDoPlantaoID.status =='CONFIRMADO',
+          'cor2': plantao.statusDoPlantaoID.status =='RECOLOCAR',
+          'cor3': plantao.statusDoPlantaoID.status =='ALTERADO',
+          'cor4': plantao.statusDoPlantaoID.status =='REALIZADO',
+          'cor5': plantao.statusDoPlantaoID.status =='PAGO'
+         }">{{plantao.statusDoPlantaoID.status}}</td>
+         <td class="diaSemana"><button class="cor2" (click)="aceitar()">ACEITAR PLANTÂO</button></td>
+
+
+
+      </tr>
+    </ng-container>
+
+  </table>
+
+</div>
