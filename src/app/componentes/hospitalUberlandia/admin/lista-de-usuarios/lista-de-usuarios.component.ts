@@ -11,20 +11,20 @@ import { Role } from 'src/app/modelos/Role/Role.module';
 export class ListaDeUsuariosComponent implements OnInit {
 
   usuarios: Usuarios[] = [];
-  profissoes: Role[]=[];
+  profissoes: Role[] = [];
 
-      constructor(
-        private listarUsuariosService: ListarUsuariosService,
+  constructor(
+    private listarUsuariosService: ListarUsuariosService,
 
-      ) { }
+  ) { }
 
-      ngOnInit(): void {
-       this.listarUsuarios();
+  ngOnInit(): void {
+    this.listarUsuarios();
 
-      }
+  }
 
-      listarUsuarios(){
-        this.listarUsuariosService.getUsuarioList().subscribe(response =>this.usuarios = response);
+  listarUsuarios() {
+    this.listarUsuariosService.getUsuarioList().subscribe(response => this.usuarios = response);
 
-      }
+  }
 }

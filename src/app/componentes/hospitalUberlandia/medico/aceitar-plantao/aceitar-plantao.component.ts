@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { DashBoardPlantoes } from 'src/app/modelos/dash-board/dash-board.module';
-
-import { ListarDashBoardService } from 'src/app/service/listar-dashboard/lista-dashboard-service';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TrocaDePlantaoService } from 'src/app/service/trocaDePlantao/troca-de-plantao.service';
 import { AuthService } from '../../../../service/auth-service/auth-service.service';
 
@@ -13,43 +10,60 @@ import { AuthService } from '../../../../service/auth-service/auth-service.servi
 })
 export class AceitarPlantaoComponent implements OnInit {
 
-  plantoes: DashBoardPlantoes[]=[];
+  id!: number;
+  user!: any;
+  dashBoardPlantoes: any;
   usuario: any;
-  userId!: number;
+
   constructor(
-
-    private listarDashBoardService: ListarDashBoardService,
-    private route: Router,
-    private trocaDePlantaoService :TrocaDePlantaoService,
-    private authService: AuthService
-
+    private router: ActivatedRoute,
+    private trocaDePlantaoService: TrocaDePlantaoService,
+    private authService: AuthService,
+    private route: Router
   ) { }
 
   ngOnInit(): void {
-    this.getUser();
+    this.id = this.router.snapshot.params['id'];
+
   }
 
-  aceitar(){}
+  aceitar() {
+    this.getPlantaoById(this.id);
+    this.getUser();
+    this.aceitarPlantaoById();
+  }
 
-  getPlantoesByIdUser(userId: number){
-    this.authService.getDadosDePlantoes(userId).subscribe(plantoes => {
-   // this.dashBoardPlantoes = plantoes;
+  getPlantaoById(id: number) {
+    this.trocaDePlantaoService.getPlantaoById(id).subscribe(plantao => {
+      this.dashBoardPlantoes = plantao;
 
-  });
-    }
+    });
+  }
 
-  getUser(){
-   this.authService.getUser().subscribe(user => {
-      this.usuario = user;
-       this.userId = this.usuario.id_user;
-      console.log(this.usuario),
-      console.log(this.userId);
-       //this.getPlantoesByIdUser(this.userId);
-  });
+  getUser() {
+    this.user = localStorage.getItem("userId");
 
-}
+  }
 
-cancelar(){
-  this.route.navigate(['/escalaDePlantoes/medico/perfil']);
-}
+  aceitarPlantaoById() {
+    console.log(this.user);
+    console.log(this.id);
+    this.trocaDePlantaoService.aceitarPlantaoByID(this.id, this.user).subscribe(
+      {
+        next: data => {
+          this.goToPerfil();
+        },
+        error: error => {
+          console.log(error);
+        }
+      }
+    )
+  }
+
+  cancelar() {
+    this.route.navigate(['/escalaDePlantoes/medico/perfil']);
+  }
+  goToPerfil() {
+    this.route.navigate(['medico/perfil']);
+  }
 }

@@ -52,6 +52,7 @@ const routes: Routes = [
                      {path: 'perfil', component: PerfilComponent},
                      {path: 'trocas/:id', component: TrocaDePlantoesComponent},
                      {path: 'troca', component: PlantoesParaTrocaComponent},
+                     {path: 'aceitar/:id', component: AceitarPlantaoComponent},
 
 
                                ],

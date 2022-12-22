@@ -11,7 +11,7 @@ import { TrocaDePlantaoService } from 'src/app/service/trocaDePlantao/troca-de-p
 })
 export class TrocaDePlantoesComponent implements OnInit {
 
-  id!:number ;
+  id!: number;
 
   dashBoardPlantoes: any;
 
@@ -23,16 +23,16 @@ export class TrocaDePlantoesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-     this.id = this.router.snapshot.params['id'];
+    this.id = this.router.snapshot.params['id'];
 
   }
 
-  aceitar(){
+  aceitar() {
     this.getPlantaoById(this.id);
     this.updatePlantaoById();
   }
 
-  getPlantaoById(id: number){
+  getPlantaoById(id: number) {
     this.trocaDePlantaoService.getPlantaoById(id).subscribe(plantao => {
       console.log(plantao);
 
@@ -41,11 +41,11 @@ export class TrocaDePlantoesComponent implements OnInit {
     });
   }
 
-  updatePlantaoById(){
+  updatePlantaoById() {
     this.trocaDePlantaoService.updatePlantaoByID(this.id, this.dashBoardPlantoes).subscribe(
       {
-        next: data =>{
-        this.goToPerfil();
+        next: data => {
+          this.goToPerfil();
         },
         error: error => {
           console.log(error);
@@ -54,16 +54,10 @@ export class TrocaDePlantoesComponent implements OnInit {
     )
   }
 
-
-
-
-
-
-
-  cancelar(){
+  cancelar() {
     this.route.navigate(['/escalaDePlantoes/medico/perfil']);
   }
-  goToPerfil(){
+  goToPerfil() {
     this.route.navigate(['medicos/perfil']);
   }
 }

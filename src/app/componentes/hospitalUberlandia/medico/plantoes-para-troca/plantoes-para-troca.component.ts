@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DashBoardPlantoes } from 'src/app/modelos/dash-board/dash-board.module';
 import { TrocaDePlantaoService } from 'src/app/service/trocaDePlantao/troca-de-plantao.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-plantoes-para-troca',
@@ -14,7 +15,8 @@ export class PlantoesParaTrocaComponent implements OnInit {
   dashBoardPlantoes : DashBoardPlantoes[]=[];
 
   constructor(
-    private trocaDePlantaoService:TrocaDePlantaoService
+    private trocaDePlantaoService:TrocaDePlantaoService,
+    private route : Router
 
   ) { }
 
@@ -29,7 +31,7 @@ export class PlantoesParaTrocaComponent implements OnInit {
     });
   }
 
-  aceitar(){
-    console.log("aceitar")
+  aceitar(id:number){
+    this.route.navigate(['escalaDePlantoes/medico/aceitar', id]);
   }
 }
