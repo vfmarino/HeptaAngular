@@ -1,18 +1,30 @@
 <div class="container">
 
   <div>
+    <form>
+    Data Inicial
+    <input type="Date"  >
+    Data Final
+    <input type="Date"  >
 
-    <input type="text">
-    <select>
-        <option value="">SELECIONAR USUARIO</option>
-    </select>
 
-    <button (click)="calcular()">Calcular</button>
-  </div>
+    </form>
+  <br>
+
+  <button (click)="calcular()">Calcular</button>
+
+</div>
+
+<br>
 
   <div class="=relatorios">
+    <br>  <br>
     <button (click)="generatePDF()">GerarPdf</button>
   </div>
+
+
+{{startDate}}
+{{endDate}}
 
 
 </div>
