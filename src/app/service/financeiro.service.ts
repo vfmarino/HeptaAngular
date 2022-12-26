@@ -9,8 +9,8 @@ export class FinanceiroService {
 
   plantoes: DashBoardPlantoes[] | undefined;
   PATH_OF_API = 'http://localhost:8080';
-  startDate:Date =new Date(2202-12-1);
-  endDate:Date=new Date(2202-12-30);;
+  startDate!:Date;
+  endDate!:Date;
 
   constructor(private httpclient: HttpClient) {
 
@@ -19,7 +19,7 @@ export class FinanceiroService {
 
   buscarPlantoesPorUsuario(startDate: Date, endDate: Date) {
     return this.httpclient.get(`${this.PATH_OF_API}/relatorioFinanceiro`, {
-      params: new HttpParams().set('startDate', startDate.toISOString()).set('endDate', endDate.toISOString()),
+      params: new HttpParams().set('startDate', startDate.toLocaleString()).set('endDate', endDate.toLocaleString()),
       headers: new HttpHeaders({
         Authorization: "Bearer " + localStorage.getItem("jwtToken") || ''
       })

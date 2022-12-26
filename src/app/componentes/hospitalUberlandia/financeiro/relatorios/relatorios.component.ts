@@ -16,8 +16,8 @@ import { FinanceiroService } from 'src/app/service/financeiro.service';
 })
 export class RelatoriosComponent implements OnInit {
 
-  startDate:Date =new Date(2202-12-1);
-  endDate:Date=new Date(2202-12-30);;
+  startDate:Date =new Date();
+  endDate:Date=new Date();;
 
 
   constructor(

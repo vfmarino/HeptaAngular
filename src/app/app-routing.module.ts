@@ -21,6 +21,8 @@ import { TrocaDePlantoesComponent } from './componentes/hospitalUberlandia/medic
 import { AceitarPlantaoComponent } from './componentes/hospitalUberlandia/medico/aceitar-plantao/aceitar-plantao.component';
 import { PlantoesParaTrocaComponent } from './componentes/hospitalUberlandia/medico/plantoes-para-troca/plantoes-para-troca.component';
 
+import { MotivosDeTrocaComponent } from './componentes/hospitalUberlandia/admin/motivos-de-troca/motivos-de-troca.component';
+
 const routes: Routes = [
 
   { path:'', component: HomeComponent},
@@ -36,7 +38,7 @@ const routes: Routes = [
                     children: [
                       {path: 'cadastrar', component: CadastrarUsuarioComponent},
                       {path: 'listaDeMedicos', component: ListaDeUsuariosComponent},
-
+                      {path: 'motivo', component: MotivosDeTrocaComponent},
                       {path: 'editarMedico/:id', component: EditarUsuarioComponent}
                       ]
                    },

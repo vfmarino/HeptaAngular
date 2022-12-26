@@ -87,8 +87,13 @@ img{
   width: 45px;
   background: none;
 }
+.voltar{
+  background: none;
+  margin-left: 0%;
+  margin-right: 10%;
+}
 .voltar button{
-  background-color: var(--cor-bg-header);
+  background-color: var(--cor-button1);
   color: var(--cor-branca);
   padding: 10px;
   margin: auto;
@@ -113,11 +118,12 @@ img{
   background-color: var(--cor-bg-header);
   margin-top: 8px;
   margin-left: 30px;
+  width: 20%;
 
 }
 .logo img{
-  width: 22%;
-  border-radius: 10px;
+  width: 50%;
+
   background-color: var(--cor-bg-header);
 }
 .admin{
@@ -125,7 +131,7 @@ img{
   font-size: 25px;
   font-weight: bold;
   background: none;
-  margin-left: -10%;
+  margin-left: 0;
   margin-right: 20%;
 }
 a{

@@ -51,7 +51,7 @@ export class AceitarPlantaoComponent implements OnInit {
     this.trocaDePlantaoService.aceitarPlantaoByID(this.id, this.user).subscribe(
       {
         next: data => {
-          this.goToPerfil();
+          this.cancelar();
         },
         error: error => {
           console.log(error);
@@ -63,7 +63,5 @@ export class AceitarPlantaoComponent implements OnInit {
   cancelar() {
     this.route.navigate(['/escalaDePlantoes/medico/perfil']);
   }
-  goToPerfil() {
-    this.route.navigate(['medico/perfil']);
-  }
+
 }

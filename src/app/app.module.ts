@@ -27,6 +27,7 @@ import { PlantoesDoMedicoComponent } from './componentes/hospitalUberlandia/medi
 import { TrocaDePlantoesComponent } from './componentes/hospitalUberlandia/medico/troca-de-plantoes/troca-de-plantoes.component';
 import { AceitarPlantaoComponent } from './componentes/hospitalUberlandia/medico/aceitar-plantao/aceitar-plantao.component';
 import { PlantoesParaTrocaComponent } from './componentes/hospitalUberlandia/medico/plantoes-para-troca/plantoes-para-troca.component';
+import { MotivosDeTrocaComponent } from './componentes/hospitalUberlandia/admin/motivos-de-troca/motivos-de-troca.component';
 
 
 
@@ -53,7 +54,8 @@ import { PlantoesParaTrocaComponent } from './componentes/hospitalUberlandia/med
     PlantoesDoMedicoComponent,
     TrocaDePlantoesComponent,
     AceitarPlantaoComponent,
-    PlantoesParaTrocaComponent
+    PlantoesParaTrocaComponent,
+    MotivosDeTrocaComponent
 
   ],
   imports: [

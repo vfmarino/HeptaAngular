@@ -13,15 +13,13 @@ import { DashBoardPlantoes } from 'src/app/modelos/dash-board/dash-board.module'
 export class DashboardComponent implements OnInit {
 
   plantoes: DashBoardPlantoes[]=[];
-
+  selecionado: boolean = false;
   cor!: string;
-  manha!: string;
-  noite!: string;
-  tarde!: string;
+  setor!: string;
 
-  dataAtual: Date = new Date()
+  dataInicial: Date = new Date()
   dataFinal: Date = new Date();
-  dataInicial : Date = new Date()
+
   constructor(
         private listarDashBoardService: ListarDashBoardService,
     private route: Router
@@ -29,9 +27,16 @@ export class DashboardComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-        this.getDashboradPlantoes();
-        console.log(localStorage.getItem("roles"));
+    console.log(this.dataFinal);
+    this.dataInicial= new Date();
+    this.getDashboradPlantoes();
 
+
+  }
+
+  calcular(){
+    console.log(this.dataFinal);
+    this.getDashboradPlantoes();
   }
 
   private getDashboradPlantoes(){
@@ -55,18 +60,12 @@ export class DashboardComponent implements OnInit {
       return this.cor;
 
     }
-    selecionarManha(){
-      this.manha =' verde';
-      return this.manha;
+    Selecionado() {
+      if (this.setor != '') {
+        this.selecionado = true;
+      } else {
+        this.selecionado = false;
+      }
     }
 
-    selecionarNoite(){
-      this.manha =' amarelo';
-      return this.manha;
-    }
-
-    selecionarTarde(){
-      this.manha =' azul';
-      return this.manha;
-    }
 }

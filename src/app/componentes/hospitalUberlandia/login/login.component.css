@@ -37,31 +37,37 @@
 }
 form{
   background: none;
-  margin: 5%;
+  margin-left: 5%;
+  margin-top: 2%;
 }
-button{
+.form1{
+  background: none;
+
+}
+.botao{
   background-color: var(--cor-button1);
   padding: 10px;
-  margin: auto;
-  margin-top: 25px;
+
+  margin-top: 5%;
+  margin-left:22.5%;
   border: none;
   border-radius: 15px;
-  width: 150px;
+  width: 50%;
   font-weight: bold;
   font-size: 16px;
-  margin: ;
+
 }
 label{
   background: none;
 }
 h3{
   background: none;
-  margin-bottom: 5px;
+
 }
 input{
   margin-bottom: 10px;
   padding: 8px;
-  width: 95%;
+  width: 90%;
 }
 select{
   margin-bottom: 10px;

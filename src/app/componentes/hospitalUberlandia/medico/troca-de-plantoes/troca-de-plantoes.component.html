@@ -1,5 +1,26 @@
 <div class="container">
-  Deseja Confirmar Pedir Troca Do Plantão Selecionado?
-  <button (click)="aceitar()">Confirmar</button>
-  <button (click)="cancelar()">Cancelar</button>
+
+  <div>
+    Qual o Motivo Da Troca?
+    <select [(ngModel)]="motivo" (change)="Selecionado()">
+      <option value="">Selecionar</option>
+      <option value="Familiar">Familiar</option>
+      <option value="Nucleo Familiar">Nucleo Familiar</option>
+      <option value="Saúde">Saúde</option>
+      <option value="Viagem Pessoal">Viagem Pessoal</option>
+      <option value="Viagem a Trabalho">Viagem a Trabalho</option>
+      <option value="Cirurgia">Cirurgia</option>
+    </select>
+
+    <br>
+    <br>
+
+  </div>
+
+  <div *ngIf="selecionado">
+    Deseja Confirmar Pedir Troca Do Plantão Selecionado?
+    <button (click)="aceitar()">Confirmar</button>
+    <button (click)="cancelar()">Cancelar</button>
+  </div>
+
 </div>

@@ -1,0 +1,28 @@
+<div class="container">
+
+  <table>
+    <tr>
+      <th>CONTADOR</th>
+      <th>DATA DA SOLICITAÇÃO</th>
+      <th>ID PLANTÃO</th>
+      <th>USUÁRIO</th>
+      <th>MOTIVO DA TROCA</th>
+
+    </tr>
+    <ng-container *ngFor = "let motivo of motivos ">
+    <tr>
+        <td class="diaSemana">{{motivo.id_motivoDeTroca}}</td>
+        <td class="diaSemana">{{motivo.data |date : 'dd/MM/yyyy'}}</td>
+        <td class="diaSemana">{{motivo.idDoPlantao}}</td>
+        <td class="diaSemana">{{motivo.idDoUsuario}}</td>
+        <td class="diaSemana">{{motivo.motivo}}</td>
+
+      </tr>
+    </ng-container>
+
+  </table>
+
+
+
+</div>
+

@@ -8,26 +8,27 @@
      <h3>Realizar Login </h3>
   </div>
 
-  <div >
-    <div >
+  <div class="form1" >
+    <div class="form1">
         <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+            Usuário:
             <input type="text"
             ngModel
             name="userName"
             id="userName"
-            placeholder="Enter your username"
+            placeholder="Digite seu e-mail"
 
             >
-
+            Senha:
             <input type="password"
             ngModel
             name="userPassword"
             id="userPassword"
-            placeholder="Enter your password"
+            placeholder="Digite sua Senha"
 
             >
 
-            <input type="submit"
+            <input  class="botao"type="submit"
             value="Login"
            >
         </form>
