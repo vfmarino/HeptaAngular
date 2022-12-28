@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { DashBoardPlantoes } from '../modelos/dash-board/dash-board.module';
 
 @Injectable({
@@ -8,7 +9,7 @@ import { DashBoardPlantoes } from '../modelos/dash-board/dash-board.module';
 export class FinanceiroService {
 
   plantoes: DashBoardPlantoes[] | undefined;
-  PATH_OF_API = 'http://localhost:8080';
+  PATH_OF_API = environment.apiUrl;
   startDate!:Date;
   endDate!:Date;
 

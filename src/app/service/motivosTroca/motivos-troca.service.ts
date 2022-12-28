@@ -2,13 +2,14 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { MotivoDeTroca } from 'src/app/modelos/motivo-de-troca/motivo-de-troca.module';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MotivosTrocaService {
 
-  PATH_OF_API = 'http://localhost:8080';
+  PATH_OF_API = environment.apiUrl;
   constructor(private httpCliente: HttpClient) { }
 
   getMotivos(): Observable<MotivoDeTroca[]>{

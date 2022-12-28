@@ -13,7 +13,7 @@ import { DashBoardPlantoes } from 'src/app/modelos/dash-board/dash-board.module'
 
 export class AuthService {
 
-  PATH_OF_API = 'http://localhost:8080';
+  PATH_OF_API = environment.apiUrl;
 
   token : any;
   requestHeader = new HttpHeaders({ 'No-Auth': 'True' });
