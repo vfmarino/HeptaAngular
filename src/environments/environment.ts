@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  //apiUrl: "http://localhost:8080"
-   apiUrl: "https://api.heptamed.com.br"
+  apiUrl: "http://localhost:3000"
+  // apiUrl: "https://api.heptamed.com.br"
 };
 
 /*

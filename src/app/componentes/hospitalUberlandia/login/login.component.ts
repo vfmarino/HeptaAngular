@@ -4,6 +4,7 @@ import { AuthService } from 'src/app/service/auth-service/auth-service.service';
 import { UserAuthService } from 'src/app/service/user-auth-service.service';
 import { NgForm } from '@angular/forms';
 import { Role } from '../../../modelos/Role/Role.module';
+import { Token } from '@angular/compiler';
 
 @Component({
   selector: 'app-login',
@@ -28,18 +29,18 @@ export class LoginComponent implements OnInit {
     this.AuthService.login(loginForm.value).subscribe(
       {
        next : (response: any) => {
-        this.userAuthService.setRoles(response.user.role);
-        this.userAuthService.setToken(response.jwtToken);
-        localStorage.setItem("userId", response.user.id_user);
 
-        localStorage.setItem("roleName", response.user.role[0].roleName);
-       const role = response.user.role[0].roleName;
+       localStorage.setItem("userId", JSON.stringify(response.user));
+       localStorage.setItem("token", response.token);
+        console.log(response);
 
-        if (role === 'Admin') {
+       const role = response.user.role.id
+
+        if (role === 1) {
           this.router.navigate(['/escalaDePlantoes/admin']);
-        } else if(role === 'Medico') {
+        } else if(role === 2) {
           this.router.navigate(['/escalaDePlantoes/medico/perfil']);
-        } else if( role === 'Financeiro'){
+        } else if( role === 3){
           this.router.navigate(['/escalaDePlantoes/financeiro']);
         } else {
           alert(" Operação não Encontrada, verificar ou entrar em contato com o Administrador")

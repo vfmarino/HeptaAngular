@@ -25,7 +25,7 @@ export class AuthService {
   ) {}
 
   public login(loginData: any) {
-    return this.httpclient.post(this.PATH_OF_API + '/authenticate', loginData, {
+    return this.httpclient.post(this.PATH_OF_API + '/auth/login', loginData, {
       headers: this.requestHeader,
     });
   }

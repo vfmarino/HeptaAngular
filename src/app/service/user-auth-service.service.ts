@@ -8,6 +8,12 @@ export class UserAuthService {
   constructor() { }
 
   public setRoles(roles: []) {
+    if (!roles.length) {
+      localStorage.removeItem('roles');
+      return
+    }
+
+
     localStorage.setItem('roles', JSON.stringify(roles));
   }
 
