@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { DashBoardPlantoes } from 'src/app/modelos/dash-board/dash-board.module';
+
 import { MotivoDeTroca } from 'src/app/modelos/motivo-de-troca/motivo-de-troca.module';
-import { AuthService } from 'src/app/service/auth-service/auth-service.service';
+
 import { TrocaDePlantaoService } from 'src/app/service/trocaDePlantao/troca-de-plantao.service';
 
 @Component({

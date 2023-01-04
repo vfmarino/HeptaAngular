@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Usuarios } from 'src/app/modelos/usuario-modelo/usuario-modelo.module';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { DashBoardPlantoes } from 'src/app/modelos/dash-board/dash-board.module';
+import { Plantao } from 'src/app/modelos/dash-board/dash-board.module';
 
 
 @Injectable({
@@ -42,9 +42,9 @@ export class AuthService {
     }) });
   }
 
-  getDadosDePlantoes(userId :number) : Observable<DashBoardPlantoes[]>{
+  getDadosDePlantoes(userId :number) : Observable<Plantao[]>{
 
-    return this.httpclient.get<DashBoardPlantoes[]>(
+    return this.httpclient.get<Plantao[]>(
       `${this.PATH_OF_API}/dadosDePlantoesByUserID/${userId}?=`+`Bearer ${localStorage.getItem('jwtToken') || ''}&userID=${userId}`,
       {
         headers: new HttpHeaders({

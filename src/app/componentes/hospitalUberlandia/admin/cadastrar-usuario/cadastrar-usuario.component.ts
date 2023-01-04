@@ -35,8 +35,7 @@ ngOnInit(): void {
 
 cadastrar(){
     console.log(this.usuario);
-    this.usuario.conta_bancariaid=12;
-    this.usuario.hospitaisid=1;
+
     this.conta.cpf = this.usuario.cpf;
 
     console.log(this.usuario);

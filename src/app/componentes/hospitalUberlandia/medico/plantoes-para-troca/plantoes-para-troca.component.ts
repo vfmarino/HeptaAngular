@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DashBoardPlantoes } from 'src/app/modelos/dash-board/dash-board.module';
+import { Plantao } from 'src/app/modelos/dash-board/dash-board.module';
 import { TrocaDePlantaoService } from 'src/app/service/trocaDePlantao/troca-de-plantao.service';
 import { Router } from '@angular/router';
 
@@ -10,9 +10,9 @@ import { Router } from '@angular/router';
 })
 export class PlantoesParaTrocaComponent implements OnInit {
 
-  plantoes: DashBoardPlantoes[]=[];
+  plantoes: Plantao[]=[];
   plantao: any;
-  dashBoardPlantoes : DashBoardPlantoes[]=[];
+  dashBoardPlantoes : Plantao[]=[];
 
   constructor(
     private trocaDePlantaoService:TrocaDePlantaoService,

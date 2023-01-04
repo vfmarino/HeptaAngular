@@ -1,6 +1,6 @@
-export class Hospitais {
+export class Hospital {
 
-  id_hospitais!: number;
+  id!: number;
   hospital!: string;
 
  }

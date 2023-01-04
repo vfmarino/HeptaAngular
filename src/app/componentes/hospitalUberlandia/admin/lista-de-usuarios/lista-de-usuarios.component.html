@@ -14,9 +14,9 @@
       </tr>
 
       <tr *ngFor = "let usuario of usuarios">
-        <td>{{usuario.id_user}}</td>
-        <td>{{usuario.role?.[0]?.roleName}}</td>
-        <td>{{usuario.nome}}</td>
+        <td>{{usuario.id}}</td>
+        <td>{{usuario.role.role}}</td>
+        <td>{{usuario.name}}</td>
         <td>{{usuario.telefone}}</td>
         <td>{{usuario.username}}</td>
         <td> ADICIONAR FOTO</td>

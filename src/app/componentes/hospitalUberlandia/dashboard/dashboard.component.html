@@ -23,18 +23,15 @@
   </select>
 </div>
 
-
 <div class="container" *ngIf="selecionado">
 
-
-
-  <div class="dataContainer" >
-      <div>
+  <div class="dataContainer">
+    <div>
       <h3>Selecionar as Datas Desejadas</h3>
-          <label>Data Inicial</label>
-          <input type="date" placeholder="Data Inicial" name="dataInicial" [(ngModel)]="dataInicial">
-          <label>Data Final</label>
-          <input type="date" placeholder="Data Final" name="dataFinal" [(ngModel)]="dataFinal">
+      <label>Data Inicial</label>
+      <input type="date" placeholder="Data Inicial" name="dataInicial" [(ngModel)]="dataInicial">
+      <label>Data Final</label>
+      <input type="date" placeholder="Data Final" name="dataFinal" [(ngModel)]="dataFinal">
     </div>
 
   </div>
@@ -51,31 +48,25 @@
       <th>STATUS</th>
 
     </tr>
-    <ng-container *ngFor = "let plantao of plantoes ">
-    <ng-container *ngIf="plantao.setoresID.setores === setor">
-      <tr *ngIf="plantao.data >=dataInicial && plantao.data <=dataFinal">
-        <td class="diaSemana">{{plantao.data |date : 'dd/MM/yyyy'}}</td>
-        <td class="diaSemana">{{plantao.diaDaSemana}}</td> <!-- ADICIONAR PIPE PARA DATA VIRAR DIA DA SEMANA -->
-        <td class="diaSemana">{{plantao.periodoID.periodo}}</td>
-        <td class="diaSemana">{{plantao.userID.nome}}</td>
-        <td class="diaSemana">{{plantao.setoresID.setores}}</td>
-        <td [ngClass]="{
-          'cor1': plantao.statusDoPlantaoID.status =='CONFIRMADO',
-          'cor2': plantao.statusDoPlantaoID.status =='RECOLOCAR',
-          'cor3': plantao.statusDoPlantaoID.status =='ALTERADO',
-          'cor4': plantao.statusDoPlantaoID.status =='REALIZADO',
-          'cor5': plantao.statusDoPlantaoID.status =='PAGO'
-         }">{{plantao.statusDoPlantaoID.status}}</td>
-
-
-
-      </tr>
+    <ng-container *ngFor="let plantao of plantoes ">
+      <ng-container *ngIf="plantao.setor.setores === setor">
+        <tr *ngIf="plantao.data >=dataInicial && plantao.data <=dataFinal">
+          <td class="diaSemana">{{plantao.data |date : 'dd/MM/yyyy'}}</td>
+          <td class="diaSemana">{{plantao.diaDaSemana}}</td> <!-- ADICIONAR PIPE PARA DATA VIRAR DIA DA SEMANA -->
+          <td class="diaSemana">{{plantao.periodo.periodo}}</td>
+          <td class="diaSemana">{{plantao.user.name}}</td>
+          <td class="diaSemana">{{plantao.setor.setores}}</td>
+          <td [ngClass]="{
+          'cor1': plantao.status.status =='CONFIRMADO',
+          'cor2': plantao.status.status =='RECOLOCAR',
+          'cor3': plantao.status.status =='ALTERADO',
+          'cor4': plantao.status.status =='REALIZADO',
+          'cor5': plantao.status.status =='PAGO'
+         }">{{plantao.status.status}}</td>
+        </tr>
       </ng-container>
     </ng-container>
 
   </table>
 
-
-
 </div>
-

@@ -1,6 +1,9 @@
-export class Setores {
+import { Hospital } from '../hopitais/hopitais.module';
+export class Setor {
 
-  id_setores!: number;
+  id!: number;
   setores!: string;
+  hospitalID!: Hospital
+
 
 }

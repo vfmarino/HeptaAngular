@@ -1,14 +1,14 @@
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
-import { DashBoardPlantoes } from '../modelos/dash-board/dash-board.module';
+import { Plantao } from '../modelos/dash-board/dash-board.module';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FinanceiroService {
 
-  plantoes: DashBoardPlantoes[] | undefined;
+  plantoes: Plantao[] | undefined;
   PATH_OF_API = environment.apiUrl;
   startDate!:Date;
   endDate!:Date;

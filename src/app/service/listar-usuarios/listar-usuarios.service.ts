@@ -15,9 +15,9 @@ export class ListarUsuariosService {
   constructor(private httpCliente: HttpClient) { }
 
   getUsuarioList(): Observable<Usuarios[]>{
-    return this.httpCliente.get<Usuarios[]>(`${this.API}`+'/listUser',  {
+    return this.httpCliente.get<Usuarios[]>(`${this.API}`+'/users',  {
       headers: new HttpHeaders({
-        Authorization: "Bearer " + localStorage.getItem("jwtToken") || ''
+        Authorization: "Bearer " + localStorage.getItem("token") || ''
       })
     });
 

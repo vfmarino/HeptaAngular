@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { DashBoardPlantoes } from 'src/app/modelos/dash-board/dash-board.module';
+import { Plantao } from 'src/app/modelos/dash-board/dash-board.module';
 
 import { environment } from 'src/environments/environment';
 
@@ -10,14 +10,14 @@ import { environment } from 'src/environments/environment';
 })
 export class ListarDashBoardService {
 
-  private readonly API = environment.apiUrl+'/listaDePlantoes';
+  private readonly API = environment.apiUrl+'/plantao';
 
   constructor(private httpCliente: HttpClient) { }
 
-  getDashboardList(): Observable<DashBoardPlantoes[]>{
-    return this.httpCliente.get<DashBoardPlantoes[]>(`${this.API}`, {
+  getDashboardList(): Observable<Plantao[]>{
+    return this.httpCliente.get<Plantao[]>(`${this.API}`, {
       headers: new HttpHeaders({
-        Authorization: "Bearer " + localStorage.getItem("jwtToken") || ''
+        Authorization: "Bearer " + localStorage.getItem("token") || ''
       })
     });
 

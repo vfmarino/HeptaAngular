@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DashBoardPlantoes } from 'src/app/modelos/dash-board/dash-board.module';
+import { Plantao } from 'src/app/modelos/dash-board/dash-board.module';
 import { AuthService } from 'src/app/service/auth-service/auth-service.service';
 
 @Component({
@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/service/auth-service/auth-service.service';
 })
 export class PlantoesDoMedicoComponent implements OnInit {
 
-  dashBoardPlantoes : DashBoardPlantoes[]=[];
+  dashBoardPlantoes : Plantao[]=[];
   usuario: any;
   userID:number =-1;
   userId:number =-1;

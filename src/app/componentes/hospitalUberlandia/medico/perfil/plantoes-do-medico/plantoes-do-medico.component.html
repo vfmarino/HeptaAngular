@@ -13,20 +13,20 @@
     </tr>
     <ng-container *ngFor = "let plantao of dashBoardPlantoes ">
       <tr>
-        <td class="diaSemana">{{plantao.id_PlantaoMedico}}</td>
+        <td class="diaSemana">{{plantao.id}}</td>
         <td class="diaSemana">{{plantao.data |date : 'dd/MM/yyyy'}}</td>
         <td class="diaSemana">{{plantao.diaDaSemana}}</td> <!-- ADICIONAR PIPE PARA DATA VIRAR DIA DA SEMANA -->
-        <td class="diaSemana">{{plantao.periodoID.periodo}}</td>
-        <td class="diaSemana">{{plantao.userID.nome}}</td>
-        <td class="diaSemana">{{plantao.setoresID.setores}}</td>
+        <td class="diaSemana">{{plantao.periodo.periodo}}</td>
+        <td class="diaSemana">{{plantao.user.nome}}</td>
+        <td class="diaSemana">{{plantao.setor.setores}}</td>
         <td [ngClass]="{
-          'cor1': plantao.statusDoPlantaoID.status =='CONFIRMADO',
-          'cor2': plantao.statusDoPlantaoID.status =='RECOLOCAR',
-          'cor3': plantao.statusDoPlantaoID.status =='ALTERADO',
-          'cor4': plantao.statusDoPlantaoID.status =='REALIZADO',
-          'cor5': plantao.statusDoPlantaoID.status =='PAGO'
-         }">{{plantao.statusDoPlantaoID.status}}</td>
-         <td class="diaSemana"><button class="cor2" (click)="trocar(plantao.id_PlantaoMedico)">Solicitar Suplente</button></td>
+          'cor1': plantao.status.status =='CONFIRMADO',
+          'cor2': plantao.status.status =='RECOLOCAR',
+          'cor3': plantao.status.status =='ALTERADO',
+          'cor4': plantao.status.status =='REALIZADO',
+          'cor5': plantao.status.status =='PAGO'
+         }">{{plantao.status.status}}</td>
+         <td class="diaSemana"><button class="cor2" (click)="trocar(plantao.id)">Solicitar Suplente</button></td>
 
 
 
