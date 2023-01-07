@@ -1,8 +1,8 @@
 export class MotivoDeTroca {
-  id_motivoDeTroca!: number;
-  idDoPlantao!: number;
-  idDoUsuario!: any;
-  data!: Date;
+  id!: number;
+  plantaoID!: number;
+  userID!: any;
+  dataDaSolicitacao!: Date;
   motivo!: String;
 
 }

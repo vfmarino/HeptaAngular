@@ -37,7 +37,7 @@ export class PlantoesDoMedicoComponent implements OnInit {
     getUser(){
       this.authService.getUser().subscribe(user => {
         this.usuario = user;
-        this.userId = this.usuario.id_user;
+        this.userId = this.usuario.id;
         this.getPlantoesByIdUser(this.userId);
       });
 

@@ -17,7 +17,7 @@
         <td class="diaSemana">{{plantao.data |date : 'dd/MM/yyyy'}}</td>
         <td class="diaSemana">{{plantao.diaDaSemana}}</td> <!-- ADICIONAR PIPE PARA DATA VIRAR DIA DA SEMANA -->
         <td class="diaSemana">{{plantao.periodo.periodo}}</td>
-        <td class="diaSemana">{{plantao.user.nome}}</td>
+        <td class="diaSemana">{{plantao.user.name}}</td>
         <td class="diaSemana">{{plantao.setor.setores}}</td>
         <td [ngClass]="{
           'cor1': plantao.status.status =='CONFIRMADO',

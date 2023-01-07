@@ -1,30 +1,26 @@
-<div class="container">
+<div class="container" #content>
+  <table>
 
-  <div>
-    <form>
-    Data Inicial
-    <input type="date" [(ngModel)]="startDate" name="startDate" >
-    Data Final
-    <input type="date"  [(ngModel)]="endDate" name="endDate">
+    <tr>
+      <th>ID</th>
+      <th>USUÁRIO</th>
+      <th>QUANTIDADE </th>
+      <th>VALOR</th>
+    </tr>
 
+    <ng-container *ngFor="let relatorio of relatorios ">
+      <tr>{{relatorios}}</tr>
+      <tr>{{relatorios}}</tr>
+      <tr>{{relatorios}}</tr>
+      <tr>{{relatorios}} </tr>
+    </ng-container>
 
-    </form>
-  <br>
-
-  <button (click)="calcular()">Calcular</button>
-
+  </table>
 </div>
 
 <br>
 
-  <div class="=relatorios">
-    <br>  <br>
-    <button (click)="generatePDF()">GerarPdf</button>
-  </div>
-
-
-{{startDate}}
-{{endDate}}
-
-
+<div class="=relatorios">
+  <br> <br>
+  <button (click)="generatePDF()">GerarPdf</button>
 </div>

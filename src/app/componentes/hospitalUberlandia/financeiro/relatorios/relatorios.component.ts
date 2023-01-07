@@ -1,13 +1,8 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-
-
-
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import { FinanceiroService } from 'src/app/service/financeiro.service';
-
-
-
+import { Relatorio } from '../../../../modelos/relatorioFinanceiro/Relatorio';
 
 @Component({
   selector: 'app-relatorios',
@@ -19,25 +14,21 @@ export class RelatoriosComponent implements OnInit {
   startDate:Date =new Date();
   endDate:Date=new Date();;
 
+  relatorios: Relatorio[] = [];
 
   constructor(
     private financeiroService: FinanceiroService
-  ) {
-
-  }
+  ) { }
 
   ngOnInit(): void {
+    this.relatorio();
 
   }
 
-  calcular() {
-    console.log(this.startDate);
-    console.log(this.endDate);
-    this.financeiroService.buscarPlantoesPorUsuario(this.startDate, this.endDate).subscribe(result => {
-      console.log(result);
-    });
+  relatorio(){
+    this.financeiroService.relatorio().subscribe(response => this.relatorios = response);
+    console.log(this.relatorios);
   }
-
 
   @ViewChild('content', { static: false }) el!: ElementRef //especifica qual div pegar com #content
 

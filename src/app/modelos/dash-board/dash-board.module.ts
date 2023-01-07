@@ -1,8 +1,6 @@
-
 import { Periodo } from "../periodo/periodo.module";
 import { PlantaoStatus } from "../plantao-status/plantao-status.module";
 import { Setor } from "../setores/setores.module";
-import { ValoresDosPlantoes } from "../valores-plantoes/valores-plantoes.module";
 import { Usuarios } from '../usuario-modelo/usuario-modelo.module';
 
 export class Plantao {
@@ -17,7 +15,6 @@ export class Plantao {
   statusID!: number;
   status!: PlantaoStatus;
   valorID!:number;
-  valor!: ValoresDosPlantoes;
   setoresID!: number;
   setor!: Setor;
 

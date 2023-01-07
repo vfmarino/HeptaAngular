@@ -12,7 +12,7 @@ import { TrocaDePlantaoService } from 'src/app/service/trocaDePlantao/troca-de-p
 })
 export class TrocaDePlantoesComponent implements OnInit {
 
-  id!: number;
+  id!: any;
   dashBoardPlantoes: any;
   selecionado: boolean = false;
   motivo: String = '';
@@ -25,8 +25,15 @@ export class TrocaDePlantoesComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.id = this.router.snapshot.params['id'];
+    this.dashBoardPlantoes = this.router.snapshot.params['id'];
+    let user = localStorage.getItem('userId');
+    if (user !== null) {
+      this.id = JSON.parse(user).id;
 
+    } else {
+      alert("Fazer Login");
+      this.route.navigate(['/escalaDePlantoes/login']);
+    }
   }
 
   Selecionado() {
@@ -56,15 +63,23 @@ export class TrocaDePlantoesComponent implements OnInit {
   }
 
   createMotivo() {
-    this.motivoDeTroca.idDoUsuario = localStorage.getItem("userId");
-    console.log(this.motivoDeTroca.idDoUsuario);
-    this.motivoDeTroca.data = new Date();
-    console.log(this.motivoDeTroca.data);
-    this.motivoDeTroca.idDoPlantao = this.id;
-    this.motivoDeTroca.motivo = this.motivo;
-    console.log(this.motivoDeTroca);
-    //this.criarMotivoDeTrocaDePlantao();
+    let user = localStorage.getItem('userId');
+    if (user !== null) {
 
+      let id = JSON.parse(user).id;
+      this.motivoDeTroca.userID = 4;
+      console.log(this.motivoDeTroca.userID);
+      this.motivoDeTroca.dataDaSolicitacao = new Date();
+      console.log(this.motivoDeTroca.dataDaSolicitacao);
+      this.motivoDeTroca.plantaoID = this.id;
+      this.motivoDeTroca.motivo = this.motivo;
+      console.log(this.motivoDeTroca);
+      this.criarMotivoDeTrocaDePlantao();
+
+    } else {
+      this.route.navigate(['/escalaDePlantoes/login']);
+      return alert('Usuário não autenticado');
+    }
   }
 
   criarMotivoDeTrocaDePlantao() {

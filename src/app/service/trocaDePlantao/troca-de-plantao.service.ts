@@ -21,30 +21,28 @@ export class TrocaDePlantaoService {
   ) { }
 
   getPlantaoById(id: number) {
-    const token = `Bearer ${localStorage.getItem('jwtToken') || ''}`;
-    const url = `${this.PATH_OF_API}/dadosDePlantaoById/${id}?token=${token}`;
+    const token = `Bearer ${localStorage.getItem('token') || ''}`;
+    const url = `${this.PATH_OF_API}/dadosDePlantaoById/${id}`;
     return this.httpclient.get<Plantao>(url, {
       headers: new HttpHeaders({
-        Authorization: "Bearer " + localStorage.getItem("jwtToken") || ''
+        Authorization: "Bearer " + localStorage.getItem("token") || ''
       })
     });
   }
 
-  updatePlantaoByID(id: number, dashBoardPlantoes: Plantao) {
-    return this.httpclient.put(`${this.PATH_OF_API}/recolocarPlantao/${id}`, dashBoardPlantoes,
-      {
-        headers: new HttpHeaders({
-          Authorization: "Bearer " + localStorage.getItem("jwtToken") || ''
-        })
-      }
+  updatePlantaoByID(id: number, dashBoardPlantoes: number) {
+    return this.httpclient.put(`${this.PATH_OF_API}/recolocarPlantao/${id}`+`/${dashBoardPlantoes}`, {},{
+      headers: new HttpHeaders({
+        Authorization: "Bearer " + localStorage.getItem("token") || ''
+      })
+    });
 
-    );
   }
   aceitarPlantaoByID(id: number, user: number) {
-    return this.httpclient.put(`${this.PATH_OF_API}/aceitarPlantao/${id}/${user}`, user,
+    return this.httpclient.put(`${this.PATH_OF_API}/aceitarPlantao/${id}/${user}`,
       {
         headers: new HttpHeaders({
-          Authorization: "Bearer " + localStorage.getItem("jwtToken") || ''
+          Authorization: "Bearer " + localStorage.getItem("token") || ''
         })
       }
 
@@ -52,18 +50,18 @@ export class TrocaDePlantaoService {
   }
 
   ListarPlantoesEmTroca(): Observable<Plantao[]> {
-    return this.httpclient.get<Plantao[]>(`${this.PATH_OF_API}` + '/listarPlantoesEmTroca', {
+    return this.httpclient.get<Plantao[]>(`${this.PATH_OF_API}` + '/plantaoByStatus/', {
       headers: new HttpHeaders({
-        Authorization: "Bearer " + localStorage.getItem("jwtToken") || ''
+        Authorization: "Bearer " + localStorage.getItem("token") || ''
       })
     });
 
   }
 
   criarMotivoDeTrocaDePlantao(motivoDeTroca: MotivoDeTroca): Observable<any> {
-    return this.httpclient.post<any>(`${this.PATH_OF_API}` + '/cadastrarMotivoTroca', motivoDeTroca, {
+    return this.httpclient.post<any>(`${this.PATH_OF_API}` + '/motivos', motivoDeTroca, {
       headers: new HttpHeaders({
-        Authorization: "Bearer " + localStorage.getItem("jwtToken") || ''
+        Authorization: "Bearer " + localStorage.getItem("token") || ''
       })
     });
   }

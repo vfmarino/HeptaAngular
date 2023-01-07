@@ -13,9 +13,9 @@ export class MotivosTrocaService {
   constructor(private httpCliente: HttpClient) { }
 
   getMotivos(): Observable<MotivoDeTroca[]>{
-    return this.httpCliente.get<MotivoDeTroca[]>(`${this.PATH_OF_API}/listarMotivos`, {
+    return this.httpCliente.get<MotivoDeTroca[]>(`${this.PATH_OF_API}/motivos`, {
       headers: new HttpHeaders({
-        Authorization: "Bearer " + localStorage.getItem("jwtToken") || ''
+        Authorization: "Bearer " + localStorage.getItem("token") || ''
       })
     });
 

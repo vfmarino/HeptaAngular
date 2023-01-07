@@ -11,10 +11,10 @@
     </tr>
     <ng-container *ngFor = "let motivo of motivos ">
     <tr>
-        <td class="diaSemana">{{motivo.id_motivoDeTroca}}</td>
-        <td class="diaSemana">{{motivo.data |date : 'dd/MM/yyyy'}}</td>
-        <td class="diaSemana">{{motivo.idDoPlantao}}</td>
-        <td class="diaSemana">{{motivo.idDoUsuario}}</td>
+        <td class="diaSemana">{{motivo.id}}</td>
+        <td class="diaSemana">{{motivo.dataDaSolicitacao |date : 'dd/MM/yyyy'}}</td>
+        <td class="diaSemana">{{motivo.plantaoID}}</td>
+        <td class="diaSemana">{{motivo.userID}}</td>
         <td class="diaSemana">{{motivo.motivo}}</td>
 
       </tr>
